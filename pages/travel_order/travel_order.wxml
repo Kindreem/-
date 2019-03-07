@@ -1,0 +1,57 @@
+<!--pages/travel_order/travel_order.wxml-->
+<view>
+  <view class='back' bindtap='bindBack'>
+    <image class='back_icon' src='../image/back.png'></image>
+  </view>
+  <view class='to_top_icon_ly'>
+    <text class='to_top_text'>预定订单</text>
+    <text space="emsp" class='to_top_text'>订  单</text>
+  </view>
+  <scroll-view scroll-y style="height:80vh;">
+
+
+
+    <view class="page-section-spacing" bindtouchstart="touchstart1" bindtouchend="touchend1">
+      <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%" bindscroll="scroll" scroll-into-view="{{toView}}">
+        <view wx:if='{{anyArrays}}' id="demo1" class="scroll-view-item_H demo-text-1" style="padding-bottom: {{anyArrays?'20rpx':'0'}}">
+          <block wx:for='{{anyArrays}}' wx:key="id">
+            <view class='list_item_ly list_1' bindtap='bindItemClick1' data-id='{{item.aoid}}'>
+              <view class='list_item list_item11'>
+                <!-- <view class='list_item_img_ly'>
+                    <image class='list_item_img' src='{{item.url}}'></image>
+                  </view> -->
+                <view class='list_item_text_ly'>
+                  <text class='list_item_text'>目的地：{{item.destination+' '+item.touristspot}}</text>
+                  <text class='list_item_text'>出发时间：{{item.departuretime}}</text>
+                </view>
+              </view>
+              <view class='line_all'></view>
+            </view>
+          </block>
+        </view>
+        <view wx:else id="demo1" class="scroll-view-item_H demo-text-1 demoelse" style="padding-bottom: {{anyArrays?'20rpx':'0'}}">暂无订单</view>
+
+        <view wx:if='{{order}}' id="demo2" class="scroll-view-item_H demo-text-2" style="padding-bottom: {{order?'20rpx':'0'}}">
+          <block wx:for='{{order}}' wx:key="id">
+            <view class='list_item_ly' bindtap='bindItemClick' data-id='{{item.orderid}}'>
+              <view class='list_item'>
+                <view class='list_item_img_ly list_2'>
+                  <image class='list_item_img' src='{{item.routeimg}}'></image>
+                </view>
+                <view class='list_item_text_ly'>
+                  <text class='list_item_text'>线路：{{item.title}}</text>
+                  <text class='list_item_text'>出发时间：{{item.setouttime}}</text>
+                </view>
+              </view>
+              <!-- <view class='pay'><text class="{{item.status===0?'pay_text1':'pay_text2'}}">{{item.status===0?'未付款':'已支付'}}</text></view> -->
+              <view class='line_all'></view>
+            </view>
+          </block>
+        </view>
+        <view wx:else id="demo2" class="scroll-view-item_H demo-text-2 demoelse" style="padding-bottom: {{order?'20rpx':'0'}}">暂无订单</view>
+      </scroll-view>
+    </view>
+
+
+  </scroll-view>
+</view>

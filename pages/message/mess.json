@@ -1,0 +1,6 @@
+{
+  "backgroundColor": "#637976",
+  "usingComponents": {
+    "picker1": "../../picker/picker"
+  }
+}

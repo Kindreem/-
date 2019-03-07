@@ -1,0 +1,264 @@
+/* pages/order/order.wxss */
+page {
+  width: 100%;
+  height: 100%;
+  font-size: 20rpx;
+  background: -webkit-radial-gradient( #B2BEB1, #637976); /* Safari 5.1 - 6.0 */
+  background: -o-radial-gradient(#B2BEB1, #637976); /* Opera 11.6 - 12.0 */
+  background: -moz-radial-gradient(#B2BEB1, #637976); /* Firefox 3.6 - 15 */
+  background: radial-gradient(#B2BEB1, #637976);
+}
+.all {
+  padding-bottom:0rpx;
+}
+.re_main{
+  display: flex;
+  flex-direction:column;
+}
+
+
+.to_top_icon_ly {
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 80rpx;
+  font-size: 36rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* font-weight: bold; */
+}
+
+.to_top_text {
+  width: 100%;
+  text-align: center;
+  color: white;
+  font: 32rpx '黑体';
+}
+
+.center_ly{
+  padding-top: 35rpx;
+  padding-bottom: 35rpx;
+  padding-left: 58rpx;
+  padding-right: 58rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.center_text_item{
+  font-size:28rpx; 
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+}
+
+.center_text_left{
+  color: white;
+  width: 30%;
+}
+.center_text_right{
+  color: white;
+  width: 70%;
+}
+
+.center_tel{
+  display: flex;
+  margin-top: 35rpx;
+  justify-content: flex-end;
+}
+
+.center_tel_text{
+  align-self: center;
+  color: white;
+  font-size:26rpx; 
+}
+.center_tel_icon{
+  align-self: center;
+  margin-left: 10rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.bottom_ly{
+  padding-top: 35rpx;
+  padding-bottom: 35rpx;
+  padding-left: 58rpx;
+}
+
+
+.list_ly{
+  height: 100rpx;
+  font-size: 26rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+
+.list_item{
+  color: white;
+  white-space:nowrap;
+}
+.list_item_time {
+  font-size: 24rpx;
+}
+.list_item_center_ly{
+  height: 100rpx;
+  display: flex;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  flex-direction: column;
+  
+}
+.list_item_center_top_line{
+  width: 1rpx;
+  background-color: white;
+  height: 18rpx;
+}
+.list_item_center_top_line2{
+  width: 1rpx;
+  height: 18rpx;
+}
+
+
+.list_item_center_cr{
+  border: 0 solid #f00;
+  border-radius: 10rpx;
+  margin-left: -4rpx;
+  width: 10rpx;
+  height: 10rpx;
+  background-color: white;
+}
+.list_item_center_line{
+  width: 1rpx;
+  background-color: white;
+  height: 88rpx;
+}
+.list_item_center_line2{
+  width: 1rpx;
+  height: 88rpx;
+}
+.but1{
+  position: fixed;
+  bottom: 0rpx;
+  left: 0;
+  right: 0;
+  /* margin-top: 30rpx; */
+  width: 100%;
+  height: 85rpx;
+  line-height: 85rpx;
+  color: #fff;
+}
+.butleft {
+  width: 50%;
+  background-color: #fff;
+  text-align: center;
+  color: #333;
+  display: inline-block;
+}
+.butright {
+  width: 50%;
+  background-color: #15cf22;
+  text-align: center;
+  display: inline-block;
+}
+
+.butleft button{
+ width: 100%; 
+ height: 100%;
+ display: inline-block;
+ background-color: #fff;
+ border: none;
+ outline: none;
+}
+.butright button{
+ width: 100%; 
+ height: 100%;
+ display: inline-block;
+ background-color: #15cf22;
+ border: none;
+ outline: none;
+ color: #fff;
+ font-weight: 600;
+}
+.butright button::after{ border: none; }
+.butleft button::after{ border: none; }
+
+.butext {
+  margin-left: 6rpx;
+  background-color: #f26c4f;
+  padding: 2rpx 6rpx;
+  border-radius: 6rpx;
+  font-size: 24rpx;
+  /* height: 20rpx;
+  width: 20rpx; */
+}
+.ptext {
+  font-size: 24rpx;
+}
+
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  z-index: 9000;
+  opacity: 0.25;
+}
+ 
+.modalDlg {
+  width: 90%;
+  /* height: 450rpx; */
+  position: fixed;
+  bottom: 3.5%;
+  left: 50%;
+  transform:translateX(-50%);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background:transparent;
+}
+/* .modalDlg1 {
+  width: 100%;
+  position: fixed;
+  top: 100%;
+  left: 0;
+  z-index: 9999;
+  
+  border-radius: 20rpx;
+} */
+.close_mask {
+  width: 100%;
+  margin-top: 20rpx;
+  color: rgb(47, 125, 226);
+  font-size: 32rpx;
+  /* margin-bottom: 20rpx; */
+  background-color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  padding: 20rpx 0;
+  border-radius: 15rpx;
+}
+.phone {
+  background-color: rgba(255, 255, 255, 0.85);
+  width: 100%;
+  /* padding: 20rpx 0rpx; */
+  border-radius: 15rpx;
+  text-align: center;
+
+}
+.phone_text {
+  display: block;
+ width: 100%;
+ font-size: 32rpx;
+ /* font-weight: 500; */
+ color: rgb(47, 125, 226);
+ padding: 20rpx 0rpx;
+}
+.phone_text_line {
+  border-bottom: 1rpx solid #ccc; 
+}
+.phone_img {
+  width: 60rpx;
+  height: 60rpx;
+}

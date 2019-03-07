@@ -1,0 +1,106 @@
+/* pages/like/like.wxss */
+
+page {
+  background: -webkit-radial-gradient(#b2beb1, #637976); /* Safari 5.1 - 6.0 */
+  background: -o-radial-gradient(#b2beb1, #637976); /* Opera 11.6 - 12.0 */
+  background: -moz-radial-gradient(#b2beb1, #637976); /* Firefox 3.6 - 15 */
+  background: radial-gradient(#b2beb1, #637976);
+}
+
+.like_all {
+  margin: 0 40rpx;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  margin: 60rpx 0;
+}
+
+.search_input {
+  background-color: rgba(0, 0, 0, 0.25);
+  height: 90rpx;
+  border-radius: 40rpx;
+  padding-left: 50rpx;
+  color: #fff;
+  text-align: center;
+}
+
+.search_img {
+  width: 38rpx;
+  height: 38rpx;
+  position: absolute;
+  top: 50%;
+  left: 36rpx;
+  margin-top: -19rpx;
+}
+
+.search_line {
+  height: 90rpx;
+  width: 1px;
+  border-left: 1px solid #ccc;
+  position: absolute;
+  left: 98rpx;
+}
+
+.placeholder_text {
+  color: #fff;
+  /* padding-left: 38%; */
+  font-size: 28rpx;
+}
+
+.card_item_all {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card_item {
+  position: relative;
+  height: 500rpx;
+  width: 49%;
+  border-radius: 20rpx;
+  margin-top: 20rpx;
+}
+
+.card_item_img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20rpx;
+}
+
+.card_content {
+  position: absolute;
+  bottom: -7rpx;
+  right: -75rpx;
+  transform: rotate(-45deg);
+  width: 136rpx;
+  height: 7rpx;
+  border-top: 54rpx solid #000;
+  border-right: 54rpx solid transparent;
+  border-bottom: 54rpx solid transparent;
+  border-left: 54rpx solid transparent;
+  opacity: 0.2;
+}
+.card_text {
+  width: 400rpx;
+  height: 30rpx;
+  text-align: center;
+  position: absolute;
+  bottom: 57rpx;
+  right: -131rpx;
+  color: #fff;
+  transform: rotate(-45deg);
+  transform-origin:50%;
+  font: 22rpx '微软雅黑';
+  letter-spacing:1rpx;
+}
+.nolike {
+  font-size: 40rpx;
+  color: #fff;
+  height: 900rpx;
+  line-height: 900rpx;
+  width: 100%;
+  text-align: center;
+}

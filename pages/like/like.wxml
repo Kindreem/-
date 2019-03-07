@@ -1,0 +1,21 @@
+<view class='like_all'>
+  <view class='back' bindtap='bindBack'>
+    <image class='back_icon' src='../image/back.png'></image>
+  </view>
+
+  <!-- <view class='search'>
+    <image class='search_img' src='../image/search.png'></image>
+    <view class='search_line'></view>
+    <input class='search_input' placeholder-class="placeholder_text" placeholder="搜索" />
+  </view> -->
+  
+
+  <view wx:if='{{list}}' class='card_item_all'>
+    <view class='card_item' wx:for="{{list}}" wx:key="item.routeid" bindlongpress="longTap" bindtap='bindroute' data-id='{{item.routeid}}' data-cid='{{item.collectid}}' data-uid='{{item.userid}}'>
+      <image class='card_item_img' src='{{item.positionimg}}'></image>
+      <view class='card_content'></view>
+      <text class='card_text'>{{item.title}}</text>
+    </view>
+  </view>
+  <view wx:else class='nolike'>暂无收藏</view>
+</view>

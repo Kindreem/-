@@ -1,0 +1,36 @@
+<!--pages/trip/trip.wxml-->
+<view class='list'>
+
+  <view class='back' bindtap='backtop' data-time="{{lastTapTime}}">
+    <image catchtap='bindBack' class='back_icon' src='../image/back.png'></image>
+  </view>
+
+  <scroll-view scroll-y style="height:85vh;" lower-threshold='600' scroll-top='{{top}}' bindscrolltolower='lower' bindscroll="scroll" class='trip_layout'>
+    <block wx:for="{{info}}" wx:key="id" wx:for-index="idx">
+      <view class="{{infolength==idx+1?'trip_list_item1':'trip_list_item'}}">
+        <image mode='widthFix' class="{{idx==0?'trip_list_item_img1':'trip_list_item_img'}}" src='{{item.content}}' wx:if="{{item.type == 1}}"></image>
+        <view class='trip_item_content' wx:else>
+          <text space="emsp">{{item.content}}</text>
+        </view>
+      </view>
+    </block>
+
+
+  </scroll-view>
+  <view class='but1' hidden='{{ishid?true:false}}'>
+    <view class='butleft'>
+      <text>￥{{res.price}}</text>
+    </view>
+    <view hidden='{{res.delstate==0||res.delstate>99?false:true}}' class='butright' bindtap='baomin' data-id="{{res.routeid}}" data-title="{{res.title}}">
+      <text>报 名</text>
+    </view>
+    <view hidden='{{res.delstate==1||res.delstate==99?false:true}}' class='butright'>
+      <text>已截止</text>
+    </view>
+  </view>
+
+  <view class='share'>
+    <button open-type='share'></button>
+    <image src='../image/000.png'></image>
+  </view>
+</view>

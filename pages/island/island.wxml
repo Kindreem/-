@@ -1,0 +1,96 @@
+<!--pages/island/island.wxml  选个岛屿-->
+<view>
+  <view class='back'>
+    <image class='back_icon' bindtap='bindBack' src='../image/back.png'></image>
+  </view>
+
+  <scroll-view scroll-y style="height:88vh;">
+    <view>
+
+      <!-- item -->
+
+      <view class='list_item' style='background-color: #056c7d;'>
+        <image src='http://onjuly-1257989321.cos.ap-guangzhou.myqcloud.com/route/img/3fcfc20a75d45ec7863e25eb27c4746a.png' class='list_item_top_img' mode='widthFix'></image>
+        <text class='list_item_top_text'>选座岛</text>
+        <text class='list_item_top_text1'>Choose an island</text>
+        <view>
+          <view class="page-section-spacing">
+            <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+              <block wx:for='{{list.island}}' wx:key="id">
+                <view class="scroll-view-item_H" bindtap='bindRelease' data-id='{{item.placeid}}' data-place='{{item.place}}'>
+                  <image class='scroll_img' src='{{item.img}}'></image>
+                  <text class='scroll_text'>{{item.place}}</text>
+                </view>
+              </block>
+            </scroll-view>
+          </view>
+        </view>
+      </view>
+
+      <view class='list_item' style='background-color: #2e7eba;'>
+        <image src='http://onjuly-1257989321.cos.ap-guangzhou.myqcloud.com/route/img/c8346905d31eaf8415402ea4d3522fa0.png' class='list_item_top_img' mode='widthFix'></image>
+        <text class='list_item_top_text'>寻座城</text>
+        <text class='list_item_top_text1'>Seat an city</text>
+        <view>
+          <view class="page-section-spacing">
+            <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+              <block wx:for='{{list.city}}' wx:key="id">
+                <view class="scroll-view-item_H" bindtap='bindRelease' data-id='{{item.placeid}}' data-place='{{item.place}}'>
+                  <image class='scroll_img' src='{{item.img}}'></image>
+                  <text class='scroll_text'>{{item.place}}</text>
+                </view>
+              </block>
+            </scroll-view>
+          </view>
+        </view>
+      </view>
+
+
+      <view class='list_item' style='background-color: #749446;'>
+        <image src='http://onjuly-1257989321.cos.ap-guangzhou.myqcloud.com/route/img/b7f9e697c627b1b9effacba329a427fa.png' class='list_item_top_img' mode='widthFix'></image>
+        <text class='list_item_top_text'>走条路</text>
+        <text class='list_item_top_text1'>Take a walk</text>
+        <view>
+          <view class="page-section-spacing">
+            <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+              <block wx:for='{{list.road}}' wx:key="id">
+                <view class="scroll-view-item_H" bindtap='bindRelease' data-id='{{item.placeid}}' data-place='{{item.place}}'>
+                  <image class='scroll_img' src='{{item.img}}'></image>
+                  <text class='scroll_text'>{{item.place}}</text>
+                </view>
+              </block>
+            </scroll-view>
+          </view>
+        </view>
+      </view>
+
+
+      <view class='list_item' style='background-color: #8c5359;'>
+        <image src='http://onjuly-1257989321.cos.ap-guangzhou.myqcloud.com/route/img/8394cb42f1f1ca66ad2231c6bbc5335e.png' class='list_item_top_img' mode='widthFix'></image>
+        <text class='list_item_top_text'>学门艺</text>
+        <text class='list_item_top_text1'>Learning</text>
+        <view>
+          <view class="page-section-spacing">
+            <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+              <block wx:for='{{list.art}}' wx:key="id">
+                <view class="scroll-view-item_H" bindtap='bindRelease' data-id='{{item.placeid}}' data-place='{{item.place}}'>
+                  <image class='scroll_img' src='{{item.img}}'></image>
+                  <text class='scroll_text'>{{item.place}}</text>
+                </view>
+              </block>
+            </scroll-view>
+          </view>
+        </view>
+      </view>
+
+
+      <view class='list_item' style='background-color: #e1cb93;' bindtap='bindRelease1'>
+        <image src='http://onjuly-1257989321.cos.ap-guangzhou.myqcloud.com/route/img/5c4fb54e3949f4aaac06c2958de34401.png' class='list_item_top_img' mode='widthFix'></image>
+        <text class='list_item_top_text'>自己选</text>
+        <text class='list_item_top_text1'>Choose</text>
+      </view>
+
+    </view>
+  </scroll-view>
+
+</view>

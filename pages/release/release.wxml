@@ -1,0 +1,24 @@
+<!--pages/release/release.wxml-->
+<view>
+  <view class='back'>
+    <image class='back_icon' bindtap='bindBack' src='../image/back.png'></image>
+  </view>
+  <view class='re_main'>
+    <view class='re_top_icon_ly'>
+      <text class='re_top_cancle'>取消</text>
+      <text class='re_top_release'>发表</text>
+    </view>
+    <view class='re_text_ly'>
+      <textarea auto-focus="true" auto-height bindblur="bindTextAreaBlur" style='color:white;' />
+    </view>
+    <view class='line_all'></view>
+    <view class='re_bottom_ly'>
+      <image src='../image/photo.png' class='re_photo'></image>
+      <text class='re_text'>照片</text>
+      <image src='../image/enter.png' class='re_enter'></image>
+
+    </view>
+    <view class='line_all'></view>
+  </view>
+
+</view>

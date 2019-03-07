@@ -1,0 +1,27 @@
+<!--pages/gallery/gallery.wxml-->
+<view class='gallery_container'>
+  <view class='img_contain'>
+    <image class="index-image" mode="scaleToFill" src='{{bgimg}}'></image>
+  </view>
+
+
+  <view class='gallery_title_layout'>
+    <text class='gallery_title_font'>心 系 远 方</text>
+  </view>
+
+  <view class='gallery_bottom_layout'>
+    <view class='gallery_grids'>
+      <block wx:for="{{photo}}" wx:key="*this">
+        <!-- <navigator url='' > -->
+        <image bindtap="imgSee" data-list="{{grids}}" data-src="{{item.img}}" src='{{item.img}}' class="gallery_grid_item" hover-class="gallery_grid_active"></image>
+        <!-- </navigator> -->
+      </block>
+    </view>
+
+    <view class='gallery_btn_layout'>
+      <view class='gallery_btn_style'  bindtap='bindClose'>Close</view>
+    </view>
+
+  </view>
+
+</view>

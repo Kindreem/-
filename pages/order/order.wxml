@@ -1,0 +1,91 @@
+<!--pages/order/order.wxml-->
+<view class='all'>
+  <view class='back' bindtap='bindBack'>
+    <image class='back_icon' src='../image/back.png'></image>
+  </view>
+  <view class='re_main'>
+    <view class='to_top_icon_ly'>
+      <text class='to_top_text' space="emsp">预定订单</text>
+    </view>
+
+    <view class='line_all' style='margin-top:10rpx;'></view>
+    <view class='center_ly'>
+      <text style='font-size:36rpx; color:white;'>订单信息</text>
+      <view class='center_text_item'>
+        <text class='center_text_left' space="emsp">目的地 :</text>
+        <text class='center_text_right'>{{list.destination+' '+list.touristspot}}</text>
+      </view>
+      <view class='center_text_item'>
+        <text class='center_text_left' space="emsp">人  数:</text>
+        <text class='center_text_right'>{{list.number}}</text>
+      </view>
+      <view class='center_text_item'>
+        <text class='center_text_left' space="emsp">行程天数:</text>
+        <text class='center_text_right'>{{list.traveldays}}</text>
+      </view>
+      <view class='center_text_item'>
+        <text class='center_text_left'>出发时间:</text>
+        <text class='center_text_right'>{{departuretime}}</text>
+      </view>
+      <view class='center_text_item'>
+        <text class='center_text_left'>出发地点:</text>
+        <text class='center_text_right'>{{list.departure}}</text>
+      </view>
+      <view class='center_text_item'>
+        <text class='center_text_left' space="emsp">是否拼团:</text>
+        <text class='center_text_right'>{{list.grouppermissions?'是':'否'}}</text>
+      </view>
+      <view class='center_text_item'>
+        <text class='center_text_left'>预定时间:</text>
+        <text class='center_text_right'>{{list.ctime}}</text>
+      </view>
+      <view class='center_tel' bindtap="open_mask">
+        <text class='center_tel_text'>联系旅游规划师</text>
+        <image src='../image/phone.png' class='center_tel_icon'></image>
+        <!-- <contact-button type="default-light" size="20" session-from="weapp" class='center_tel_icon'>
+        </contact-button> -->
+      </view>
+
+    </view>
+    <view class='line_all'></view>
+    <view class='line_all' style='margin-top:10rpx;'></view>
+    <view class='bottom_ly'>
+      <text style='font-size:36rpx; color:white;'>订单流程</text>
+      <view style='padding-top:20rpx;'>
+        <block wx:for="{{anyArrays}}" wx:key="id">
+          <view class='list_ly'>
+            <view class='list_item list_item_time'>{{item.ctime}}</view>
+            <view class='list_item_center_ly'>
+              <view class="{{index===0?'list_item_center_top_line2':'list_item_center_top_line'}}"></view>
+              <view class='list_item_center_cr'></view>
+              <view class="{{size===index+1?'':'list_item_center_line'}}"></view>
+            </view>
+            <view class='list_item'>
+              <text>{{item.content}}</text>
+              <view>
+                <text class='ptext'>处理人:{{item.person}}</text>
+                <text data-id='{{item.routeid}}' bindtap='ckan' hidden="{{item.content==='线路规划已完成！请查看'?false:true}}" class='butext'>查看</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class='line_all'></view>
+  <view class="modalDlg" wx:if="{{showModal}}">
+    <!-- <view class='close_mask' bindtap="close_mask">X</view> -->
+    <view class='phone'>
+    <text class='phone_text phone_text_line' >线路规划师</text>
+      <text selectable='true' class='phone_text phone_text_line' bindtap='tel'>干见雨：13667298249</text>
+      <text selectable='true' class='phone_text phone_text_line' bindtap='tel1'>小七：18202750830</text>
+      <text selectable='true' class='phone_text phone_text_line' bindtap='tel2'>小八：18202750800</text>
+      <text selectable='true' class='phone_text' bindtap='tel3'>邓邓：13407145500</text>
+      <!-- <image bindtap='tel' class='phone_img' src='../image/ph.png'></image> -->
+    </view>
+    <view class="close_mask" bindtap="close_mask">取消</view>
+  </view>
+  
+  <view class="mask" bindtap="preventTouchMove" wx:if="{{showModal}}"></view>
+
+</view>

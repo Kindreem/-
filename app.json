@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/launch/launch",
+    "pages/index/index",
+    "pages/myself/myself",
+    "pages/gallery/gallery",
+    "pages/trip/trip",
+    "pages/custom_destination/custom_destination",
+    "pages/custom_destination1/custom_destination1",
+    "pages/release/release",
+    "pages/island/island",
+    "pages/travel_order/travel_order",
+    "pages/travel_order_detail/travel_order_detail",
+    "pages/logs/logs",
+    "pages/like/like",
+    "pages/message/mess",
+    "pages/authorize/authorize",
+    "pages/order/order"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#169CFF",
+    "navigationBarTitleText": "七月上",
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": ""
+      },
+      {
+        "pagePath": "pages/myself/myself",
+        "text": ""
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

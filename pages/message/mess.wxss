@@ -1,0 +1,252 @@
+/* pages/message/mess.wxss */
+
+page {
+  background: -webkit-radial-gradient(#b2beb1, #637976); /* Safari 5.1 - 6.0 */
+  background: -o-radial-gradient(#b2beb1, #637976); /* Opera 11.6 - 12.0 */
+  background: -moz-radial-gradient(#b2beb1, #637976); /* Firefox 3.6 - 15 */
+  background: radial-gradient(#b2beb1, #637976);
+}
+
+.zong {
+  padding: 0 0 350rpx 0;
+}
+
+.all {
+  margin: 50rpx 40rpx;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #fff;
+  border-radius: 20rpx;
+  font: 32rpx '宋体';
+  white-space: nowrap;
+}
+
+.top {
+  padding: 46rpx 64rpx;
+  border-bottom: thin dashed #ddd;
+}
+
+.top .top_title {
+  text-align: center;
+}
+
+.top_title_title {
+  font-size: 45rpx;
+  margin-bottom: 20rpx;
+}
+.top_title_title1 {
+  font-size: 28rpx;
+  margin-top: 20rpx;
+}
+.content {
+  padding: 10rpx 64rpx;
+}
+
+.content1 {
+  margin: 50rpx 0rpx;
+}
+
+.content_img {
+  text-align: center;
+  width: 100%;
+  margin-top: 50rpx;
+}
+
+.content_img image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.content .top_title {
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.content text {
+  height: 50rpx;
+  line-height: 62rpx;
+}
+
+.content input {
+  width: 100%;
+  border-bottom: thin solid #ddd;
+  height: 50rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.bottom {
+  width: 100%;
+  text-align: center;
+}
+
+.bottom image {
+  width: 56rpx;
+  height: 56rpx;
+}
+
+.but {
+  width: 27%;
+  margin: 50rpx auto;
+}
+
+.but button {
+  background-color: rgba(0, 0, 0, 0.15);
+  height: 74rpx;
+  line-height: 74rpx;
+  color: #fff;
+  border: none;
+  font-size: 30rpx;
+}
+
+.pick {
+  background: rgba(255, 255, 255, 0.95);
+  height: 37rpx;
+  line-height: 37rpx;
+  font-size: 28rpx;
+  padding: 8rpx 16rpx;
+  border-radius: 15rpx;
+}
+
+.picker {
+  display: inline-block;
+  color: #555;
+}
+
+.but1 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* margin-top: 30rpx; */
+  width: 100%;
+  height: 85rpx;
+  line-height: 85rpx;
+  color: #fff;
+}
+
+.butleft {
+  height: 100%;
+  position: relative;
+  width: 50%;
+  background-color: #fff;
+  color: #333;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.butright {
+  height: 100%;
+  width: 50%;
+  background-color: #15cf22;
+  text-align: center;
+  display: inline-block;
+}
+
+.butleft button {
+  margin: 0 auto;
+  padding:0;
+  padding-right: 15%;
+  width: 100%;
+  height: 100%;
+  /* line-height: 100%; */
+  /* display: inline-block; */
+  background-color: #fff;
+  border: none;
+  outline: none;
+  font-size: 35rpx;
+  overflow: hidden;
+}
+
+.butleft .minxi {
+  position: absolute;
+  background: #f26c4f;
+  right: 0;
+  top: 0;
+  width: 15%;
+  height: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.butleft .minxi image {
+  width: 25rpx;
+  height: 21rpx;
+  display: block;
+  margin-left: 28%;
+  margin-top: 6%;
+}
+
+.butleft .minxi text {
+  /* text-align: center;  */
+  width: 100%;
+  font-size: 24rpx;
+  color: #fff;
+  writing-mode: vertical-rl;
+  /* display: block; */
+  margin-left: 21%;
+}
+
+.butright button {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: #15cf22;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 36rpx;
+  font-weight: 600;
+}
+
+.butright button::after {
+  border: none;
+}
+
+.butleft button::after {
+  border: none;
+}
+
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  z-index: 9000;
+  opacity: 0.25;
+}
+
+.modalDlg {
+  width: 90%;
+  /* height: 450rpx; */
+  position: fixed;
+  bottom: 7.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  background: #fff;
+  line-height: 34rpx;
+  border-radius: 12rpx;
+  padding: 3% 2%;
+  /* text-align: center; */
+}
+
+.modalDlg .mingxi {
+  font-size: 26rpx;
+  white-space: pre-line;
+}
+
+.departure_time_rgp {
+  /* font-size: 30rpx; */
+  transform:scale(0.82);
+  margin-top: 5rpx;
+  /* height: 50rpx; */
+}
+.departure_time_rgp radio {
+vertical-align: 4rpx;
+}

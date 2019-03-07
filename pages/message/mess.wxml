@@ -1,0 +1,93 @@
+<view class='zong'>
+  <view class='back' bindtap='bindBack'>
+    <image class='back_icon' src='../image/back.png'></image>
+  </view>
+  <form bindsubmit="formSubmit">
+    <view class='all'>
+      <view class='top'>
+        <view class='top_title top_title_title'>
+          <!-- <text>行程名称：</text> -->
+          <text>{{title}}</text>
+        </view>
+        <view class='top_title'>
+          <text>出发日期：</text>
+          <view class='picker'>
+            <!-- <picker bindchange="bindPickerChange" data-ap='{{array[index].adultprice}}' data-cp='{{array[index].childrenprice}}' value="{{index}}" range="{{array}}" range-key="{{'setouttime'}}" class='picker'>
+              <view class="pick">{{array[index].setouttime}}</view>
+            </picker> -->
+            <text bindtap='pickertap' class="pick">{{index}}</text>
+            <picker1 isShowPicker="{{openpick}}" bind:sure="bindPickerChange" bind:cancle="cancleCallBack" scrollType="normal" listData="{{array}}" keyWordsOfShow="setouttime" indicatorStyle="height:40px" maskStyle="" titleStyle="" sureStyle="color:blue;font-size:16px;" cancelStyle="color:red;font-size:16px;"
+              chooseItemTextStyle="color:#000;" pickerHeaderStyle="background:#eee;" titleText="" cancelText="取消" sureText="确认"></picker1>
+          </view>
+
+        </view>
+        <view class='top_title top_title_title1'>
+          <text>成人：{{index=='请选择'?0:adultprice}}/人 儿童：{{index=='请选择'?0:childrenprice}}/人</text>
+        </view>
+      </view>
+
+      <view class='content'>
+        <view class='content1' wx:for="{{list}}" wx:key="index">
+          <view class='top_title list-msg'>
+            <text>类</text>
+            <text style='margin-left: 2em;'>型：</text>
+
+            <radio-group name='pstatus' class="departure_time_rgp" data-id='{{index}}' bindchange='radioChange'>
+              <radio value="1" name="is" checked />成人
+              <radio value="0" name="not" />儿童
+            </radio-group>
+
+          </view>
+          <view class='top_title'>
+            <text>姓</text>
+            <text style='margin-left: 2em;'>名：</text>
+            <input bindblur="bindKeyInput1" data-id='{{index}}' type='text' name="name" value='{{item.name}}'></input>
+          </view>
+          <view class='top_title'>
+            <text>联系电话：</text>
+            <input bindblur="bindKeyInput2" data-id='{{index}}' type='number' name="phonenumber" value='{{item.phonenumber}}'></input>
+          </view>
+          <view class='top_title'>
+            <text>身份证件：</text>
+            <input bindblur="bindKeyInput3" data-id='{{index}}' type='idcard' name="idcard" value='{{item.idcard}}'></input>
+          </view>
+          <view class='content_img'>
+            <image src='../image/jian.png' bindtap='jian' data-id='{{index}}'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='bottom'>
+      <image src='../image/jia.png' bindtap='jia'></image>
+    </view>
+    <!-- <view class='but'>
+      <button form-type="submit">确 认</button>
+    </view> -->
+
+    <view class='but1'>
+      <view class='butleft'>
+        <button wx:if="{{adultprice==0}}" style='line-height: 34rpx;'>
+          <text style='font-size: 22rpx;'>价格受日期影响</text>
+          <text style='font-size: 22rpx;display:block;'>请先选择出发日期</text>
+        </button>
+        <button wx:else>￥{{price}}</button>
+        <view class='minxi' bindtap="open_mask">
+          <image src='../image/trg.png'></image>
+          <text>明细</text>
+        </view>
+      </view>
+      <view class='butright'>
+        <button form-type="submit">支 付</button>
+      </view>
+    </view>
+  </form>
+  <!-- hidden='{{ishid?true:false}}' -->
+
+  <view class="modalDlg" wx:if="{{showModal}}">
+    <!-- <view class='close_mask' bindtap="close_mask">X</view> -->
+    <text space="emsp" class='mingxi'>{{mingxi}}</text>
+  </view>
+
+  <view class="mask" bindtap="preventTouchMove" wx:if="{{showModal}}"></view>
+
+</view>

@@ -1,0 +1,129 @@
+<!--index.wxml-->
+<view class="main">
+  <image class="index-image" mode="scaleToFill" src='{{img4}}'></image>
+
+  <view class='home_title_layout'>
+    <text class='home_title_font'>{{title}}</text>
+  </view>
+
+  <view class='center_ly'>
+
+    <!-- 第一张 -->
+    <view class="body-swiper" bindtap='bindTrip'  data-id="{{img1.routeid}}" bindtouchstart="touchstart1" bindtouchend="touchend1" style="z-index:{{index1}};top:{{ballTop1}}rpx;  margin-left:{{ballLeft1}}rpx;width:{{ballWidth1}}rpx;" animation="{{animationData1}}">
+      <!-- 正面 -->
+      <view class='center_item_icon_ly'>
+        <image src='../image/home_photo_icon.png' class='center_item_icon'></image>
+        <text class='center_item_icon_text'>{{img1.publisher==1?'官方':'定制'}}</text>
+      </view>
+      <view class="body-container">
+        <!-- <text style="text-align:center">卡片1正面</text> -->
+        <image class="avatar" src="{{img1.positionimg}}"></image>
+      </view>
+      <view class='bottom_layout'>
+        <view class='bottom_layout_bottom'>
+          <view class='bottom_layout_bottom_item'>
+            <image src='../image/logo.png' class='bottom_layout_bottom_item_img'></image>
+          </view>
+          <view class='bottom_layout_bottom_line'></view>
+          <view class='bottom_layout_bottom_item' catchtap='bindGallery' data-id="{{img1.routeid}}">
+            <image src='../image/photo.png' class='bottom_layout_bottom_item_img2'></image>
+            <view class='bottom_layout_bottom_item_text_ly'>
+              <text class='bottom_layout_bottom_item_text_top'>{{img1.imgnum}}</text>
+              <text class='bottom_layout_bottom_item_text_bottom'>Pictures</text>
+            </view>
+          </view>
+          <view class='bottom_layout_bottom_line'></view>
+          <view class='bottom_layout_bottom_item' catchtap='islike1'>
+            <image src='../image/like.png' hidden='{{like1>0?true:false}}' class='bottom_layout_bottom_item_img3'></image>
+            <image src='../image/like1.png' hidden='{{like1>0?false:true}}' class='bottom_layout_bottom_item_img3'></image>
+            <view class='bottom_layout_bottom_item_text_ly'>
+              <text class='bottom_layout_bottom_item_text_top'>{{img1.hots<10000? img1.hots: hot1 +'万'}}</text>
+              <text class='bottom_layout_bottom_item_text_bottom'>Likes</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+    <!-- 第二张 -->
+    <view class="body-swiper2" bindtap='bindTrip' data-img='{{img2.positionimg}}' data-id="{{img2.routeid}}" bindtouchstart="touchstart2" bindtouchend="touchend2" style="z-index:{{index2}};top:{{ballTop2}}rpx;margin-left:{{ballLeft2}}rpx;width:{{ballWidth2}}rpx;" animation="{{animationData2}}">
+
+      <view class='center_item_icon_ly'>
+        <image src='../image/home_photo_icon.png' class='center_item_icon'></image>
+        <text class='center_item_icon_text'>{{img2.publisher==1?'官方':'定制'}}</text>
+      </view>
+
+      <!-- 正面 -->
+      <view class="body-container">
+        <!-- <text style="text-align:center">卡片2正面</text> -->
+        <image class="avatar" src="{{img2.positionimg}}"></image>
+      </view>
+      <view class='bottom_layout'>
+        <view class='bottom_layout_bottom'>
+          <view class='bottom_layout_bottom_item'>
+            <image src='../image/logo.png' class='bottom_layout_bottom_item_img'></image>
+          </view>
+          <view class='bottom_layout_bottom_line'></view>
+          <view class='bottom_layout_bottom_item' catchtap='bindGallery' data-id="{{img2.routeid}}">
+            <image src='../image/photo.png' class='bottom_layout_bottom_item_img2'></image>
+            <view class='bottom_layout_bottom_item_text_ly'>
+              <text class='bottom_layout_bottom_item_text_top'>{{img2.imgnum}}</text>
+              <text class='bottom_layout_bottom_item_text_bottom'>Pictures</text>
+            </view>
+          </view>
+          <view class='bottom_layout_bottom_line'></view>
+          <view class='bottom_layout_bottom_item' catchtap='islike2'>
+            <image src='../image/like.png' hidden='{{like2>0?true:false}}' class='bottom_layout_bottom_item_img3'></image>
+            <image src='../image/like1.png' hidden='{{like2>0?false:true}}' class='bottom_layout_bottom_item_img3'></image>
+            <view class='bottom_layout_bottom_item_text_ly'>
+              <text class='bottom_layout_bottom_item_text_top'>{{img2.hots<10000? img2.hots: hot2 +'万'}}</text>
+              <text class='bottom_layout_bottom_item_text_bottom'>Likes</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+    <!-- 第三张 -->
+    <view class="body-swiper3" bindtap='bindTrip' data-img='{{img3.positionimg}}' data-id="{{img3.routeid}}" bindtouchstart="touchstart3" bindtouchend="touchend3" style="z-index:{{index3}};top:{{ballTop3}}rpx;  margin-left:{{ballLeft3}}rpx;width:{{ballWidth3}}rpx;" animation="{{animationData3}}">
+
+      <view class='center_item_icon_ly'>
+        <image src='../image/home_photo_icon.png' class='center_item_icon'></image>
+        <text class='center_item_icon_text'>{{img3.publisher==1?'官方':'定制'}}</text>
+      </view>
+
+      <view class="body-container">
+        <!-- <text style="text-align:center">卡片3正面</text> -->
+        <image class="avatar" src="{{img3.positionimg}}"></image>
+      </view>
+      <view class='bottom_layout'>
+        <view class='bottom_layout_bottom'>
+          <view class='bottom_layout_bottom_item'>
+            <image src='../image/logo.png' class='bottom_layout_bottom_item_img'></image>
+          </view>
+          <view class='bottom_layout_bottom_line'></view>
+          <view class='bottom_layout_bottom_item' catchtap='bindGallery' data-id="{{img3.routeid}}">
+            <image src='../image/photo.png' class='bottom_layout_bottom_item_img2'></image>
+            <view class='bottom_layout_bottom_item_text_ly'>
+              <text class='bottom_layout_bottom_item_text_top'>{{img3.imgnum}}</text>
+              <text class='bottom_layout_bottom_item_text_bottom'>Pictures</text>
+            </view>
+          </view>
+          <view class='bottom_layout_bottom_line'></view>
+          <view class='bottom_layout_bottom_item' catchtap='islike3'>
+            <image src='../image/like.png' hidden='{{like3>0?true:false}}' class='bottom_layout_bottom_item_img3'></image>
+            <image src='../image/like1.png' hidden='{{like3>0?false:true}}' class='bottom_layout_bottom_item_img3'></image>
+            <view class='bottom_layout_bottom_item_text_ly'>
+              <text class='bottom_layout_bottom_item_text_top'>{{img3.hots<10000? img3.hots: hot3 +'万'}}</text>
+              <text class='bottom_layout_bottom_item_text_bottom'>Likes</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <tabbar tabbar="{{tabbar}}"></tabbar>
+  <view class='show' hidden='{{!isshow?true:false}}'><text>{{showtext}}</text></view>
+  <!-- <button class='lobut' open-type='getUserInfo' >获取授权</button> -->
+</view>

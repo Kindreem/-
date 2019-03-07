@@ -1,0 +1,91 @@
+<!--pages/travel_order_detail/travel_order_detail.wxml-->
+<view>
+  <view class='back' bindtap='bindBack'>
+    <image class='back_icon' src='../image/back.png'></image>
+  </view>
+  <view class='re_main'>
+    <view class='to_top_icon_ly'>
+      <text class='to_top_text' space="emsp">订  单</text>
+    </view>
+
+    <view class='line_all' style='margin-top:10rpx;'></view>
+    <view class='center_ly'>
+      <text style='font-size:36rpx; color:white;'>订单信息</text>
+      <view class='center_text_item'>
+        <text class='center_text_left' space="emsp">订单号码:</text>
+        <text class='center_text_right'>{{list.outtradeno}}</text>
+      </view>
+      <view class='center_text_item'>
+        <text class='center_text_left' space="emsp">微信单号:</text>
+        <text class='center_text_right'>{{list.transactionid}}</text>
+      </view>
+      <view class='center_text_item'>
+        <text class='center_text_left' space="emsp">线  路:</text>
+        <text class='center_text_right'>{{list.title}}</text>
+      </view>
+      <view class='center_text_item'>
+        <text class='center_text_left' space="emsp">人  数:</text>
+        <text class='center_text_right'>{{list.peoplenum}}</text>
+      </view>
+      <view class='center_text_item'>
+        <text class='center_text_left'>出发时间:</text>
+        <text class='center_text_right'>{{setouttime}}</text>
+      </view>
+      <view class='center_text_item'>
+        <text class='center_text_left'>付款金额:</text>
+        <text class='center_text_right'>{{list.totalfee}}</text>
+      </view>
+      <view class='center_text_item'>
+        <text class='center_text_left' space="emsp">状  态:</text>
+        <text class='center_text_right'>已支付</text>
+      </view>
+      <view class='center_text_item'>
+        <text class='center_text_left'>付款时间:</text>
+        <text class='center_text_right'>{{list.ctime}}</text>
+      </view>
+      <view class='center_tel' bindtap="open_mask">
+        <text class='center_tel_text'>联系旅游规划师</text>
+        <image src='../image/phone.png' class='center_tel_icon'></image>
+        <!-- <contact-button type="default-light" size="20" session-from="weapp" class='center_tel_icon'>
+        </contact-button> -->
+      </view>
+
+    </view>
+    <view class='line_all'></view>
+    <view class='line_all' style='margin-top:10rpx;'></view>
+    <!-- <view class='bottom_ly'>
+      <text style='font-size:30rpx; color:white;'>订单流程</text>
+      <view>
+        <block wx:for="{{anyArrays}}" wx:key="id">
+          <view class='list_ly'>
+            <view class='list_item'>{{item.time}}</view>
+            <view class='list_item_center_ly'>
+              <view class="{{index===0?'list_item_center_top_line2':'list_item_center_top_line'}}"></view>
+              <view class='list_item_center_cr'></view>
+              <view class="{{index>anyArrays.size?'list_item_center_line2':'list_item_center_line'}}"></view>
+            </view>
+            <view class='list_item'>{{item.describe}}</view>
+          </view>
+        </block>
+      </view>
+
+    </view> -->
+    
+
+  </view>
+
+  <view class="modalDlg" wx:if="{{showModal}}">
+    <!-- <view class='close_mask' bindtap="close_mask">X</view> -->
+    <view class='phone'>
+      <text class='phone_text phone_text_line' >线路规划师</text>
+      <text selectable='true' class='phone_text phone_text_line' bindtap='tel'>干见雨：13667298249</text>
+      <text selectable='true' class='phone_text phone_text_line' bindtap='tel1'>小七：18202750830</text>
+      <text selectable='true' class='phone_text phone_text_line' bindtap='tel2'>小八：18202750800</text>
+      <text selectable='true' class='phone_text' bindtap='tel3'>邓邓：13407145500</text>
+      <!-- <image bindtap='tel' class='phone_img' src='../image/ph.png'></image> -->
+    </view>
+    <view class="close_mask" bindtap="close_mask">取消</view>
+  </view>
+  
+  <view class="mask" bindtap="preventTouchMove" wx:if="{{showModal}}"></view>
+</view>

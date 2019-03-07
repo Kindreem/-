@@ -1,0 +1,8 @@
+/* pages/launch/launch.wxss */
+page {
+  width: 100%;
+  height: 100%;
+  background:#637976 url("http://onjuly-1257989321.cos.ap-guangzhou.myqcloud.com/route/img/b584db0d147ad6ded74067f4d5733307.jpg") no-repeat 0;
+  background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+}

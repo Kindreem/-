@@ -1,0 +1,120 @@
+<!--pages/custom_destination/custom_destination.wxml-->
+<view>
+  <form bindsubmit="formSubmit">
+    <view class='back' bindtap='bindBack'>
+      <image class='back_icon' src='../image/back.png'></image>
+    </view>
+    <view class='main_layout'>
+      <!-- 地点 -->
+      <view class='cd_address'>
+        <view class='cd_address_item'>
+          <!-- <text class='cd_address_text' space="emsp">地  点</text> -->
+          <view class='time'>
+            <text class='cd_address_text2' style="font: 40rpx '黑体';">{{place}}</text>
+          </view>
+        </view>
+        <!-- <view class='line'></view> -->
+      </view>
+      <!-- 景点 -->
+      <!-- <view class='scenic_spot'>
+        <view class='cd_address_item'>
+          <text class='cd_address_text' space="emsp">景  点</text>
+          <view class='time'> -->
+            <!-- <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" range-key="{{'scenic'}}">
+              <view class="cd_address_text">{{array[index].scenic}}</view>
+            </picker> -->
+            <!-- <view class="comment-btn">
+            <button 
+            wx:for="{{riderCommentList}}" 
+            wx:for-item="item" 
+            wx:key="item.index"  
+            bindtap="checkboxChange" 
+            data-value="{{item.value}}" 
+            data-index="{{index}}"  
+            checked="{{item.selected}}"
+            class="btn {{item.selected ? 'btn-selected' : ''}}" >
+            {{item.value}}
+        </button>
+        </view> -->
+          <!-- </view>
+        </view>
+        <view class='line'></view>
+      </view> -->
+      <!-- 人数 -->
+      <view class='scenic_spot'>
+        <view class='cd_address_item'>
+          <text class='cd_address_text' space="emsp">人  数</text>
+          <view class='time'>
+            <picker name='number' bindchange="bindPickerChange1" value="{{index1}}" range="{{array1}}">
+              <view class="cd_address_text">{{array1[index1]}}</view>
+            </picker>
+          </view>
+        </view>
+        <view class='line'></view>
+      </view>
+      <!-- 行程天数 -->
+      <view class='scenic_spot'>
+        <view class='cd_address_item'>
+          <text class='cd_address_text' space="emsp">行程天数</text>
+          <view class='time'>
+            <picker name='traveldays' bindchange="bindPickerChange2" value="{{index2}}" range="{{array2}}">
+              <view class="cd_address_text">{{array2[index2]}}</view>
+            </picker>
+          </view>
+        </view>
+        <view class='line'></view>
+      </view>
+      <!-- 出发地点 -->
+      <view class='scenic_spot'>
+        <view class='cd_address_item'>
+          <text class='cd_address_text' space="emsp">出发地点</text>
+          <input name="departure" class='cd_address_input' placeholder-class="place-holder" placeholder="请输入出发地"></input>
+        </view>
+        <view class='line'></view>
+      </view>
+      <!-- 出发时间 -->
+      <view class='scenic_spot'>
+        <view class='cd_address_item'>
+          <text class='cd_address_text' space="emsp">出发时间</text>
+          <view class='time'>
+            <picker name='departuretime' mode="date" bindchange="bindDateChange" value="{{data1}}" start="{{currentdate}}" end="2100-12-28">
+              <view class="cd_address_text">{{data1}}</view>
+            </picker>
+          </view>
+        </view>
+        <view class='line'></view>
+      </view>
+      <!-- 拼团权限 -->
+      <view class='scenic_spot'>
+        <view class='cd_address_item'>
+          <text class='cd_address_text' space="emsp">拼团权限</text>
+          <text class='cd_address_text1'>是否接受拼团</text>
+          <view class='departure_time'>
+            <radio-group name='grouppermissions' class="departure_time_rgp" bindchange=''>
+              <radio color='#555' value="1" name="is" checked="false" />是
+              <radio color='#555' value="0" name="not" checked="true" />否
+            </radio-group>
+          </view>
+        </view>
+        <view class='line'></view>
+      </view>
+      <!-- 下一步 -->
+      <view class='gallery_btn_layout'>
+        <button form-type="submit" class='gallery_btn_style' hover-class='gallery_grid_active'>Next</button>
+      </view>
+      <!-- bindtap='bindIsLand' -->
+    </view>
+  </form>
+  <view class='all_pont' bindtap='startA'>
+    <image src='../image/pont.png'></image>
+  </view>
+  <view class="{{isa?'mask':'mask mask_a'}}">
+    <view class='mask_list'>
+     <view class='mask_block' wx:for="{{riderCommentList}}" wx:key="index" >
+       <text>{{item.scenic}}</text>
+     </view>
+     </view>
+     <view class='line mask_line'></view>
+     <image bindtap='startA' class='mask_img' src='../image/pontt.png'></image>
+  </view>
+</view>

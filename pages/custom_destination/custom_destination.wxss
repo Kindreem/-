@@ -1,0 +1,286 @@
+/* pages/custom_destination/custom_destination.wxss */
+
+page {
+  width: 100%;
+  height: 100%;
+  background: #6c7c79 url('http://onjuly-1257989321.cos.ap-guangzhou.myqcloud.com/route/img/44886055d3713283026b4c38c8020bdb.jpg') no-repeat 0 0;
+  background-size: cover;
+}
+
+.comment-btn {
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  /* width: 16vw;
+  height: 8vw; */
+  font-size: 22rpx;
+  border: 1px solid #dcdcdc;
+  background: #fff;
+  border-radius: 4px;
+  margin: 0rpx 10rpx 12rpx;
+  padding: 1rpx 8rpx;
+  text-align: center;
+}
+
+.btn::after {
+  border: none;
+}
+
+.btn-selected {
+  border: 1px solid #06a380;
+}
+
+.main_layout {
+  margin-top: 2vh;
+  font-size: 16px;
+  margin-left: 70rpx;
+  margin-right: 70rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.main_layout input {
+  text-align: center;
+  color: #555;
+}
+
+.cd_address {
+  display: flex;
+  flex-direction: column;
+}
+
+.cd_address_item {
+  display: flex;
+  flex-direction: row;
+}
+
+.cd_address_text {
+  color: white;
+  white-space: nowrap;
+  /* padding-right: 40rpx; */
+  vertical-align: center;
+  text-align: center;
+}
+
+.cd_address_text1 {
+  color: white;
+  font-size: 24rpx;
+  padding-left: 30rpx;
+  padding-right: 40rpx;
+  white-space: nowrap;
+  vertical-align: center;
+  padding-top: 6rpx;
+}
+
+.cd_address_text2 {
+  width: 100%;
+  display: inline-block;
+  color: white;
+  white-space: nowrap;
+  /* padding-right: 40rpx; */
+  vertical-align: center;
+  text-align: center;
+}
+
+.time {
+  /* margin-left: 70rpx; */
+  width: 100%;
+}
+
+.cd_address_input {
+  width: 100%;
+}
+
+.place-holder {
+  color: #666;
+  font-size: 28rpx;
+  text-align: center;
+}
+
+.cd_address_icon {
+  display: flex;
+  width: 20%;
+  justify-content: flex-end;
+}
+
+.cd_address_img {
+  margin-top: 5rpx;
+  width: 38rpx;
+  height: 38rpx;
+}
+
+.line {
+  width: 100%;
+  margin-top: 15rpx;
+  height: 1px;
+  background: white;
+}
+
+.scenic_spot {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4vh;
+}
+
+.departure_time {
+  display: flex;
+  width: 45%;
+  justify-content: flex-start;
+}
+
+.departure_time_rgp {
+  height: 15rpx;
+  min-height: 15rpx;
+  /* 行高 */
+  line-height: 15rpx;
+}
+
+.gallery_btn_layout {
+  align-self: center;
+  margin-top: 5vh;
+}
+
+.gallery_btn_style {
+  background-color: rgba(0, 0, 0, 0.3);
+  /* width: 120rpx; *//* height: 50rpx; */
+  text-align: center;
+  color: white;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.gallery_btn_style::after {
+  border: none;
+}
+
+/*  重写 radio 样式  */
+
+/* 未选中的 背景样式 */
+
+radio .wx-radio-input {
+  border-radius: 50%; /* 圆角 */
+  width: 30rpx;
+  height: 30rpx;
+}
+
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+
+radio .wx-radio-input.wx-radio-input-checked {
+  border: none;
+  background: red;
+}
+
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+
+radio .wx-radio-input.wx-radio-input-checked::before {
+  border-radius: 50%; /* 圆角 */
+  width: 30rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 30rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 30rpx;
+  text-align: center;
+  font-size: 25rpx; /* 对勾大小 30rpx */
+  color: #fff; /* 对勾颜色 白色 */
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+.slider1 {
+  width: 100%;
+  margin: 0 0 0 36rpx;
+}
+
+.all_pont {
+  position: fixed;
+  top: 12vh;
+  left: 0;
+}
+
+.all_pont> image {
+  width: 62rpx;
+  height: 130rpx;
+}
+
+.mask {
+  position: fixed;
+  top: 21.5vh;
+  left: 0;
+  right: 0;
+  margin: 0 7vw;
+  padding: 6% 0% 14%;
+  height: 50vh;
+  z-index: -999;
+  opacity: 0;
+  width: 86vw;
+  background: rgba(245, 244, 244,0.95);
+  border-bottom-left-radius: 6%;
+  border-bottom-right-radius: 6%;
+  border-top-left-radius: 2%;
+  border-top-right-radius: 2%;
+}
+
+.mask_a {
+  animation: mobbile 1s forwards;
+}
+
+@keyframes mobbile {
+  from {
+    height: 0vh;
+    opacity: 0;
+    z-index: -999;
+  }
+
+  to {
+    height: 50vh;
+    opacity: 1;
+    z-index: 999;
+  }
+}
+.mask_list {
+  display: flex;
+  /* text-align: center; */
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  align-content: flex-start;
+  height: 100%;
+  /* width: 100%; */
+  overflow-y: scroll;
+  margin: 0 8%;
+}
+.mask_block {
+  /* width: 33%; */
+  /* height: 60rpx; */
+  text-align: center;
+  font: 26rpx  '宋体';
+  /* font-weight: 600; */
+  margin: 5% 2%;
+  color: #9b9999; 
+}
+
+.mask_block text {
+  /* background: #e0e5e4e0; */
+  border: 1rpx solid #9b9999;
+  padding: 12rpx 14rpx;
+  border-radius: 8%;
+}
+
+.mask_line {
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  right: 0;
+  background: #888;
+}
+
+.mask_img {
+  display: inline-block;
+  text-align: center;
+  position: absolute;
+  bottom: 0%;
+  width: 38rpx;
+  height: 34rpx;
+  padding: 2.5% 50%;
+  transform: translateX(-19rpx)
+}

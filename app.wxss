@@ -1,0 +1,36 @@
+/**app.wxss**/
+@import 'utils/weui.wxss';
+.container {
+  font-size: 16px;
+  font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+}
+
+.view_is_hide{
+  display: none;
+}
+.view_is_show{
+  display: block;
+}
+.back {
+  position: sticky;
+}
+
+.back_icon {
+  padding-left: 40rpx;
+  margin-top: 6vh;
+  margin-bottom: 10rpx;
+  width: 24rpx;
+  height: 43rpx;
+}
+
+.line_all{
+  background: white;
+  height: 1px;
+  width: 100%;
+}
+
+::-webkit-scrollbar{
+width: 0;
+height: 0;
+color: transparent;
+}

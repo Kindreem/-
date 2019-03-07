@@ -1,0 +1,112 @@
+/* pages/trip/trip.wxss */
+
+page {
+  font-size: 16px;
+  background:#383a4c;
+}
+
+.trip_layout {
+  /* position: relative; */
+ margin-top: 1.2vh; 
+ margin-bottom : 40rpx;  
+}
+
+.trip_list_item {
+  /* position: relative; */
+  width: 100%;
+  margin-top: 0rpx;
+}
+
+.trip_list_item1 {
+  position: relative;
+  width: 100%;
+  margin-top: 30rpx; 
+  /* (150) */
+}
+.trip_list_item_img {
+  width: 100%;
+  /* height: 100%; */
+  display: block;
+  margin-bottom: 50rpx;
+}
+.trip_list_item_img1 {
+  width: 100%;
+  /* height: 100%; */
+  display: block;
+  /* margin-bottom: 50rpx; */
+}
+
+.trip_item_content {
+  /* position: absolute;
+  top: 26%;
+  left: 0; */
+  /* background-color: rgba(0, 0, 0, 0.2); */
+  padding: 0rpx 60rpx 40rpx;
+  color: white;
+  font: 24rpx "宋体";
+  text-align: center;
+  /* text-indent: 50rpx; */
+}
+.trip_item_content text {
+  line-height: 46rpx;
+}
+.but{
+  position: absolute;
+  top: -110rpx;
+  left: 0;
+  right: 0;
+  /* margin-top: 30rpx; */
+  width: 100%;
+  height: 85rpx;
+  line-height: 85rpx;
+  color: #fff;
+}
+.butleft {
+  width: 50%;
+  background-color: #0088ff;
+  text-align: center;
+  
+  display: inline-block;
+}
+.butright {
+  width: 50%;
+  background-color: #f26c4f;
+  text-align: center;
+  display: inline-block;
+}
+.but1 {
+  position: fixed;
+  bottom: 0rpx;
+  left: 0;
+  right: 0;
+  /* margin-top: 30rpx; */
+  width: 100%;
+  height: 85rpx;
+  line-height: 85rpx;
+  color: #fff;
+  
+}
+.but1 text {
+font-size: 36rpx;
+}
+.share {
+  position: fixed;
+  top: 75%;
+  right: 15rpx;
+}
+.share image {
+  position: absolute;
+  right: 15rpx;
+  width: 70rpx;
+  height: 70rpx;
+  z-index: 2
+}
+.share button {
+  position: absolute;
+  right: 15rpx;
+  width: 60rpx;
+  height: 60rpx;
+  background: transparent;
+  z-index: 3
+} 
+.share button::after{ border: none; }

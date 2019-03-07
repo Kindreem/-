@@ -1,0 +1,68 @@
+/* pages/main/home.wxss */
+
+page {
+  width: 100%;
+  height: 100%;
+  background: #637976 url('http://onjuly-1257989321.cos.ap-guangzhou.myqcloud.com/route/img/a6d379ff1f5b5b20c06427f634f1a17d.jpg') no-repeat 0 0;
+  background-size: cover;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  margin-top: 108rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.logo_img {
+  border: 0 solid #f00;
+  border-radius: 120rpx;
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.nick {
+  margin-top: 50rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.nick_text {
+  color: white;
+  font-size: 32rpx;
+}
+
+/* 游记 */
+
+.travel_notes {
+  margin-top: 69rpx;
+  display: flex;
+  justify-content: center;
+}
+
+/* 行程订单 */
+
+.travel_order {
+  margin-top: 34rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.travel_notes_text {
+  letter-spacing: 10rpx;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 380rpx;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: white;
+  font: 30rpx '微软雅黑';
+  border-radius: 10rpx;
+  /* font-weight: bold; */
+}
+
