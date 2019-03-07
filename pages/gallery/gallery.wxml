@@ -13,7 +13,7 @@
     <view class='gallery_grids'>
       <block wx:for="{{photo}}" wx:key="*this">
         <!-- <navigator url='' > -->
-        <image bindtap="imgSee" data-list="{{grids}}" data-src="{{item.img}}" src='{{item.img}}' class="gallery_grid_item" hover-class="gallery_grid_active"></image>
+        <image lazy-load='true' bindtap="imgSee" data-list="{{grids}}" data-src="{{item.img}}" src='{{item.img}}' class="gallery_grid_item" hover-class="gallery_grid_active"></image>
         <!-- </navigator> -->
       </block>
     </view>

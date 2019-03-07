@@ -8,7 +8,7 @@
   <scroll-view scroll-y style="height:85vh;" lower-threshold='600' scroll-top='{{top}}' bindscrolltolower='lower' bindscroll="scroll" class='trip_layout'>
     <block wx:for="{{info}}" wx:key="id" wx:for-index="idx">
       <view class="{{infolength==idx+1?'trip_list_item1':'trip_list_item'}}">
-        <image mode='widthFix' class="{{idx==0?'trip_list_item_img1':'trip_list_item_img'}}" src='{{item.content}}' wx:if="{{item.type == 1}}"></image>
+        <image mode='widthFix' lazy-load='true' class="{{idx==0?'trip_list_item_img1':'trip_list_item_img'}}" src='{{item.content}}' wx:if="{{item.type == 1}}"></image>
         <view class='trip_item_content' wx:else>
           <text space="emsp">{{item.content}}</text>
         </view>
