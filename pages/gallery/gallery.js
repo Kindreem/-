@@ -98,11 +98,11 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
-    return {
-      path: "pages/launch/launch"
-    }
-  },
+  // onShareAppMessage: function() {
+  //   return {
+  //     path: "pages/launch/launch"
+  //   }
+  // },
 
   //图片点击事件
   imgSee: function(event) {

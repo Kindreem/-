@@ -60,7 +60,7 @@
               <view class='list_item_center_cr'></view>
               <view class="{{size===index+1?'':'list_item_center_line'}}"></view>
             </view>
-            <view class='list_item'>
+            <view class='list_item list_item_content'>
               <text>{{item.content}}</text>
               <view>
                 <text class='ptext'>处理人:{{item.person}}</text>

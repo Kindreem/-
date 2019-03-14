@@ -85,7 +85,8 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      path: "pages/launch/launch"
+      path: "pages/launch/launch",
+      imageUrl: "http://onjuly-1257989321.cos.ap-guangzhou.myqcloud.com/route/img/6773022b7305a4abdd7b4ad7de008bb81.png"
     }
   }
 })

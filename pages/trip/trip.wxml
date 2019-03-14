@@ -21,7 +21,7 @@
     <view class='butleft'>
       <text>￥{{res.price}}</text>
     </view>
-    <view hidden='{{res.delstate==0||res.delstate>99?false:true}}' class='butright' bindtap='baomin' data-id="{{res.routeid}}" data-title="{{res.title}}">
+    <view hidden='{{res.delstate==0||res.delstate==100?false:true}}' class='butright' bindtap='baomin' data-id="{{res.routeid}}" data-title="{{res.title}}">
       <text>报 名</text>
     </view>
     <view hidden='{{res.delstate==1||res.delstate==99?false:true}}' class='butright'>

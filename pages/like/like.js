@@ -1,4 +1,5 @@
 // pages/like/like.js
+const app = getApp()
 Page({
 
   /**
@@ -41,6 +42,8 @@ Page({
               if (res.data.code == 200) {
                 console.log(res.data.data)
                 that.onLoad()
+                app.globalData.likeid.push(collectid)
+                console.log(app.globalData.likeid)
               }
             }
           })
@@ -99,6 +102,7 @@ Page({
    */
   onLoad: function (options) {
     let that = this
+    app.globalData.likeid=[]
     wx.request({
       url: 'https://api.qyshang.com/route/usercollect', // 仅为示例，并非真实的接口地址
       method: 'POST',
@@ -116,6 +120,10 @@ Page({
         that.setData({
           list: res.data.data,
         })
+        }else {
+          that.setData({
+            list: '',
+          })
         }
       }
     })
@@ -166,9 +174,9 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-    return {
-      path: "pages/launch/launch"
-    }
-  }
+  // onShareAppMessage: function () {
+  //   return {
+  //     path: "pages/launch/launch"
+  //   }
+  // }
 })

@@ -99,6 +99,10 @@ page {
 }
 .list_item_time {
   font-size: 24rpx;
+  width: 236rpx;
+}
+.list_item_content {
+  width: 50%;
 }
 .list_item_center_ly{
   height: 100rpx;
@@ -109,31 +113,31 @@ page {
   
 }
 .list_item_center_top_line{
-  width: 1rpx;
+  width: 2rpx;
   background-color: white;
   height: 18rpx;
 }
 .list_item_center_top_line2{
-  width: 1rpx;
+  width: 2rpx;
   height: 18rpx;
 }
 
 
 .list_item_center_cr{
-  border: 0 solid #f00;
-  border-radius: 10rpx;
-  margin-left: -4rpx;
+  /* border: 0 solid #f00; */
+  border-radius: 50%;
+  transform: translateX(-40%);
   width: 10rpx;
   height: 10rpx;
   background-color: white;
 }
 .list_item_center_line{
-  width: 1rpx;
+  width: 2rpx;
   background-color: white;
   height: 88rpx;
 }
 .list_item_center_line2{
-  width: 1rpx;
+  width: 2rpx;
   height: 88rpx;
 }
 .but1{

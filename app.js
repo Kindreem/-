@@ -114,7 +114,8 @@ App({
   globalData: {
     systemInfo: null, //客户端设备信息
     userInfo: null,
-    bgimg: 'http://r.photo.store.qq.com/psb?/V10vB5Gg3SPx6M/KrAZRjUwrO3V1jGEKTzptDAG04jeFZCyG.7D1lnNjKU!/r/dLkAAAAAAAAA',
+    bgimg: '',
+    likeid: [],
     tabBar: {
       "backgroundColor": "#ffffff",
       "color": "#979795",

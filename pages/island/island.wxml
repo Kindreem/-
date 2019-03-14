@@ -15,10 +15,10 @@
         <text class='list_item_top_text1'>Choose an island</text>
         <view>
           <view class="page-section-spacing">
-            <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+            <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
               <block wx:for='{{list.island}}' wx:key="id">
                 <view class="scroll-view-item_H" bindtap='bindRelease' data-id='{{item.placeid}}' data-place='{{item.place}}'>
-                  <image class='scroll_img' src='{{item.img}}'></image>
+                  <image lazy-load='true' class='scroll_img' src='{{item.img}}'></image>
                   <text class='scroll_text'>{{item.place}}</text>
                 </view>
               </block>
@@ -33,10 +33,10 @@
         <text class='list_item_top_text1'>Seat an city</text>
         <view>
           <view class="page-section-spacing">
-            <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+            <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
               <block wx:for='{{list.city}}' wx:key="id">
                 <view class="scroll-view-item_H" bindtap='bindRelease' data-id='{{item.placeid}}' data-place='{{item.place}}'>
-                  <image class='scroll_img' src='{{item.img}}'></image>
+                  <image lazy-load='true' class='scroll_img' src='{{item.img}}'></image>
                   <text class='scroll_text'>{{item.place}}</text>
                 </view>
               </block>
@@ -52,10 +52,10 @@
         <text class='list_item_top_text1'>Take a walk</text>
         <view>
           <view class="page-section-spacing">
-            <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+            <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
               <block wx:for='{{list.road}}' wx:key="id">
                 <view class="scroll-view-item_H" bindtap='bindRelease' data-id='{{item.placeid}}' data-place='{{item.place}}'>
-                  <image class='scroll_img' src='{{item.img}}'></image>
+                  <image lazy-load='true' class='scroll_img' src='{{item.img}}'></image>
                   <text class='scroll_text'>{{item.place}}</text>
                 </view>
               </block>
@@ -71,10 +71,10 @@
         <text class='list_item_top_text1'>Learning</text>
         <view>
           <view class="page-section-spacing">
-            <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+            <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
               <block wx:for='{{list.art}}' wx:key="id">
                 <view class="scroll-view-item_H" bindtap='bindRelease' data-id='{{item.placeid}}' data-place='{{item.place}}'>
-                  <image class='scroll_img' src='{{item.img}}'></image>
+                  <image lazy-load='true' class='scroll_img' src='{{item.img}}'></image>
                   <text class='scroll_text'>{{item.place}}</text>
                 </view>
               </block>

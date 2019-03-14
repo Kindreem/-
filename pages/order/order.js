@@ -67,16 +67,23 @@ Page({
       success(res) {
         if (res.data.code == 200) {
           console.log(res.data.data)
-
+          wx.stopPullDownRefresh;
           that.setData({
             anyArrays: res.data.data,
             size: res.data.data.length
           })
+        }else {
+          wx.showToast({
+            title: '刷新失败',
+            icon: 'none',
+            duration: 2000
+          })
+          wx.stopPullDownRefresh;
         }
       }
     })
     console.log('下拉')
-    wx.stopPullDownRefresh;
+    
 
   },
   onLoad: function (options) {
@@ -217,9 +224,9 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-    return {
-      path: "pages/launch/launch"
-    }
-  }
+  // onShareAppMessage: function () {
+  //   return {
+  //     path: "pages/launch/launch"
+  //   }
+  // }
 })

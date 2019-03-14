@@ -57,7 +57,7 @@ Page({
       strDate = "0" + strDate;
     }
     var currentdate = date.getFullYear() + seperator + month + seperator + strDate
-    var data1 = date.getFullYear() + seperator + month + seperator + (strDate + 1)
+    var data1 = date.getFullYear() + seperator + month + seperator + (strDate)
     console.log(currentdate)
     console.log(data1)
     this.setData({

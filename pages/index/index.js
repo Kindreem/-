@@ -48,8 +48,8 @@ Page({
    *  卡片1手势
    */
   islike1: function() {
-    let that = this
-    if (this.data.like1 === 0) {
+      let that = this
+      console.log(1)
       wx.request({
         url: 'https://api.qyshang.com/route/collect', // 仅为示例，并非真实的接口地址
         method: 'POST',
@@ -62,134 +62,156 @@ Page({
           userid: wx.getStorageSync('userid')
         },
         success(res) {
+          console.log(res)
           if (res.data.code == 200) {
             console.log(res.data.data)
             that.setData({
               like1: res.data.data,
             })
-          }
-        }
-      })
-    } else {
-      wx.request({
-        url: 'https://api.qyshang.com/route/uncollect', // 仅为示例，并非真实的接口地址
-        method: 'POST',
-        dataType: 'json',
-        header: {
-          'content-type': 'application/x-www-form-urlencoded' // 默认值
-        },
-        data: {
-          collectid: that.data.like1,
-          userid: wx.getStorageSync('userid')
-        },
-        success(res) {
-          if (res.data.code == 200) {
-            console.log(res.data.data)
-            that.setData({
-              like1: 0,
+          } else if (res.data.code == 500) {
+            wx.request({
+              url: 'https://api.qyshang.com/route/uncollect', // 仅为示例，并非真实的接口地址
+              method: 'POST',
+              dataType: 'json',
+              header: {
+                'content-type': 'application/x-www-form-urlencoded' // 默认值
+              },
+              data: {
+                collectid: that.data.like1,
+                userid: wx.getStorageSync('userid')
+              },
+              success(res) {
+                console.log(res)
+                if (res.data.code == 200) {
+                  console.log(res.data.data)
+                  that.setData({
+                    like1: 0,
+                  })
+                } else if (res.data.code == 500) {
+                  that.setData({
+                    like1: 0,
+                  })
+                }
+              }
             })
           }
         }
       })
+
+
     }
 
-  },
+    ,
 
 
   islike2: function() {
+    console.log(2)
     let that = this
-    if (this.data.like2 === 0) {
-      wx.request({
-        url: 'https://api.qyshang.com/route/collect', // 仅为示例，并非真实的接口地址
-        method: 'POST',
-        dataType: 'json',
-        header: {
-          'content-type': 'application/x-www-form-urlencoded' // 默认值
-        },
-        data: {
-          routeid: that.data.img2.routeid,
-          userid: wx.getStorageSync('userid')
-        },
-        success(res) {
-          if (res.data.code == 200) {
-            console.log(res.data.data)
-            that.setData({
-              like2: res.data.data,
-            })
-          }
+
+    wx.request({
+      url: 'https://api.qyshang.com/route/collect', // 仅为示例，并非真实的接口地址
+      method: 'POST',
+      dataType: 'json',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' // 默认值
+      },
+      data: {
+        routeid: that.data.img2.routeid,
+        userid: wx.getStorageSync('userid')
+      },
+      success(res) {
+        console.log(res)
+        if (res.data.code == 200) {
+          console.log(res.data.data)
+          that.setData({
+            like2: res.data.data,
+          })
+        } else if (res.data.code == 500) {
+          wx.request({
+            url: 'https://api.qyshang.com/route/uncollect', // 仅为示例，并非真实的接口地址
+            method: 'POST',
+            dataType: 'json',
+            header: {
+              'content-type': 'application/x-www-form-urlencoded' // 默认值
+            },
+            data: {
+              collectid: that.data.like2,
+              userid: wx.getStorageSync('userid')
+            },
+            success(res) {
+              console.log(res)
+              if (res.data.code == 200) {
+                console.log(res.data.data)
+                that.setData({
+                  like2: 0,
+                })
+              } else if (res.data.code == 500) {
+                that.setData({
+                  like2: 0,
+                })
+              }
+            }
+          })
         }
-      })
-    } else {
-      wx.request({
-        url: 'https://api.qyshang.com/route/uncollect', // 仅为示例，并非真实的接口地址
-        method: 'POST',
-        dataType: 'json',
-        header: {
-          'content-type': 'application/x-www-form-urlencoded' // 默认值
-        },
-        data: {
-          collectid: that.data.like2,
-          userid: wx.getStorageSync('userid')
-        },
-        success(res) {
-          if (res.data.code == 200) {
-            console.log(res.data.data)
-            that.setData({
-              like2: 0,
-            })
-          }
-        }
-      })
-    }
+      }
+    })
+
 
   },
 
 
   islike3: function() {
     let that = this
-    if (this.data.like3 === 0) {
-      wx.request({
-        url: 'https://api.qyshang.com/route/collect', // 仅为示例，并非真实的接口地址
-        method: 'POST',
-        dataType: 'json',
-        header: {
-          'content-type': 'application/x-www-form-urlencoded' // 默认值
-        },
-        data: {
-          routeid: that.data.img3.routeid,
-          userid: wx.getStorageSync('userid')
-        },
-        success(res) {
-          if (res.data.code == 200) {
-            console.log(res.data.data)
-            that.setData({
-              like3: res.data.data,
-            })
-          }
+    console.log(3)
+
+    wx.request({
+      url: 'https://api.qyshang.com/route/collect', // 仅为示例，并非真实的接口地址
+      method: 'POST',
+      dataType: 'json',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' // 默认值
+      },
+      data: {
+        routeid: that.data.img3.routeid,
+        userid: wx.getStorageSync('userid')
+      },
+      success(res) {
+        console.log(res)
+        if (res.data.code == 200) {
+          console.log(res.data.data)
+          that.setData({
+            like3: res.data.data,
+          })
+        } else if (res.data.code == 500) {
+          wx.request({
+            url: 'https://api.qyshang.com/route/uncollect', // 仅为示例，并非真实的接口地址
+            method: 'POST',
+            dataType: 'json',
+            header: {
+              'content-type': 'application/x-www-form-urlencoded' // 默认值
+            },
+            data: {
+              collectid: that.data.like3,
+              userid: wx.getStorageSync('userid')
+            },
+            success(res) {
+              console.log(res)
+              if (res.data.code == 200) {
+                console.log(res.data.data)
+                that.setData({
+                  like3: 0,
+                })
+              } else if (res.data.code == 500) {
+                that.setData({
+                  like3: 0,
+                })
+              }
+            }
+          })
         }
-      })
-    } else {
-      wx.request({
-        url: 'https://api.qyshang.com/route/uncollect', // 仅为示例，并非真实的接口地址
-        method: 'POST',
-        dataType: 'json',
-        header: {
-          'content-type': 'application/x-www-form-urlencoded' // 默认值
-        },
-        data: {
-          collectid: that.data.like3,
-          userid: wx.getStorageSync('userid')
-        },
-        success(res) {
-          if (res.data.code == 200) {
-            console.log(res.data.data)
-            that.setData({
-              like3: 0,
-            })
-          }
-        }
-      })
-    }
+      }
+    })
+
 
   },
 
@@ -420,7 +442,7 @@ Page({
    */
   Animation1: function(translateXX) {
     var that = this;
-    if (wx.getStorageSync('shu1') == this.data.count-1) {
+    if (wx.getStorageSync('shu1') == this.data.count - 1) {
       var imgIndex1 = parseInt(wx.getStorageSync('shu1')) + 1
       wx.setStorageSync('shu1', imgIndex1)
       var imgIndex = 1
@@ -454,6 +476,7 @@ Page({
           console.log(res.data.data)
           that.setData({
             img3: res.data.data[0],
+            like3: res.data.data[0].collectid
             // img2: res.data.data[1],
             // img3: res.data.data[0],
             // img4: res.data.data[2].positionimg,
@@ -511,21 +534,21 @@ Page({
         ballWidth1: 565,
         index1: 1,
         hot1: that.trans(that.data.img1.hots),
-        like1: that.data.img1.collectid,
+
 
         ballTop2: 0,
         ballLeft2: -320,
         ballWidth2: 640,
         index2: 3,
         hot2: that.trans(that.data.img2.hots),
-        like2: that.data.img2.collectid,
+
 
         ballTop3: 10,
         ballLeft3: -300,
         ballWidth3: 600,
         index3: 2,
         hot3: that.trans(that.data.img3.hots),
-        like3: that.data.img3.collectid,
+
 
         img4: that.data.img2.positionimg,
         title: that.data.img2.title,
@@ -571,6 +594,7 @@ Page({
           console.log(res.data.data)
           that.setData({
             img2: res.data.data[0],
+            like2: res.data.data[0].collectid
             // img2: res.data.data[1],
             // img3: res.data.data[0],
             // img4: res.data.data[2].positionimg,
@@ -629,21 +653,21 @@ Page({
         ballWidth3: 640,
         index3: 3,
         hot3: that.trans(that.data.img3.hots),
-        like3: that.data.img3.collectid,
+
 
         ballTop1: 20,
         ballLeft1: -282.5,
         ballWidth1: 565,
         index1: 1,
         hot1: that.trans(that.data.img1.hots),
-        like1: that.data.img1.collectid,
+
 
         ballTop2: 10,
         ballLeft2: -300,
         ballWidth2: 600,
         index2: 2,
         hot2: that.trans(that.data.img2.hots),
-        like2: that.data.img2.collectid,
+
 
         img4: that.data.img3.positionimg,
         title: that.data.img3.title,
@@ -658,7 +682,7 @@ Page({
   Animation2: function(translateXX) {
     var that = this;
     // console.log(wx.getStorageSync('shu'))
-    if (wx.getStorageSync('shu1') == this.data.count-1) {
+    if (wx.getStorageSync('shu1') == this.data.count - 1) {
       var imgIndex1 = parseInt(wx.getStorageSync('shu1')) + 1
       wx.setStorageSync('shu1', imgIndex1)
       var imgIndex = 1
@@ -690,6 +714,7 @@ Page({
           console.log(res.data.data)
           that.setData({
             img1: res.data.data[0],
+            like1: res.data.data[0].collectid
             // img2: res.data.data[1],
             // img3: res.data.data[0],
             // img4: res.data.data[2].positionimg,
@@ -748,21 +773,20 @@ Page({
         ballWidth1: 600,
         index1: 2,
         hot1: that.trans(that.data.img1.hots),
-        like1: that.data.img1.collectid,
+
 
         ballTop2: 20,
         ballLeft2: -282.5,
         ballWidth2: 565,
         index2: 1,
         hot2: that.trans(that.data.img2.hots),
-        like2: that.data.img2.collectid,
+
 
         ballTop3: 0,
         ballLeft3: -320,
         ballWidth3: 640,
         index3: 3,
         hot3: that.trans(that.data.img3.hots),
-        like3: that.data.img3.collectid,
 
         img4: that.data.img3.positionimg,
         title: that.data.img3.title,
@@ -807,6 +831,7 @@ Page({
           console.log(res.data.data)
           that.setData({
             img3: res.data.data[0],
+            like3: res.data.data[0].collectid
             // img2: res.data.data[1],
             // img3: res.data.data[0],
             // img4: res.data.data[2].positionimg,
@@ -864,21 +889,21 @@ Page({
         ballWidth1: 640,
         index1: 3,
         hot1: that.trans(that.data.img1.hots),
-        like1: that.data.img1.collectid,
+
 
         ballTop2: 20,
         ballLeft2: -282.5,
         ballWidth2: 565,
         index2: 1,
         hot2: that.trans(that.data.img2.hots),
-        like2: that.data.img2.collectid,
+
 
         ballTop3: 10,
         ballLeft3: -300,
         ballWidth3: 600,
         index3: 2,
         hot3: that.trans(that.data.img3.hots),
-        like3: that.data.img3.collectid,
+
 
         img4: that.data.img1.positionimg,
         title: that.data.img1.title,
@@ -894,7 +919,7 @@ Page({
   Animation3: function(translateXX) {
     var that = this;
 
-    if (wx.getStorageSync('shu1') == this.data.count-1) {
+    if (wx.getStorageSync('shu1') == this.data.count - 1) {
       var imgIndex1 = parseInt(wx.getStorageSync('shu1')) + 1
       wx.setStorageSync('shu1', imgIndex1)
       var imgIndex = 1
@@ -926,6 +951,7 @@ Page({
           console.log(res.data.data)
           that.setData({
             img2: res.data.data[0],
+            like2: res.data.data[0].collectid
             // img2: res.data.data[1],
             // img3: res.data.data[0],
             // img4: res.data.data[2].positionimg,
@@ -983,21 +1009,21 @@ Page({
         ballWidth1: 640,
         index1: 3,
         hot1: that.trans(that.data.img1.hots),
-        like1: that.data.img1.collectid,
+
 
         ballTop2: 10,
         ballLeft2: -300,
         ballWidth2: 600,
         index2: 2,
         hot2: that.trans(that.data.img2.hots),
-        like2: that.data.img2.collectid,
+
 
         ballTop3: 20,
         ballLeft3: -282.5,
         ballWidth3: 565,
         index3: 1,
         hot3: that.trans(that.data.img3.hots),
-        like3: that.data.img3.collectid,
+
 
         img4: that.data.img1.positionimg,
         title: that.data.img1.title,
@@ -1041,6 +1067,7 @@ Page({
           console.log(res.data.data)
           that.setData({
             img1: res.data.data[0],
+            like1: res.data.data[0].collectid
             // img2: res.data.data[1],
             // img3: res.data.data[0],
             // img4: res.data.data[2].positionimg,
@@ -1097,21 +1124,21 @@ Page({
         ballWidth2: 640,
         index2: 3,
         hot2: that.trans(that.data.img2.hots),
-        like2: that.data.img2.collectid,
+
 
         ballTop3: 20,
         ballLeft3: -282.5,
         ballWidth3: 565,
         index3: 1,
         hot3: that.trans(that.data.img3.hots),
-        like3: that.data.img3.collectid,
+
 
         ballTop1: 10,
         ballLeft1: -300,
         ballWidth1: 600,
         index1: 2,
         hot1: that.trans(that.data.img1.hots),
-        like1: that.data.img1.collectid,
+
 
         img4: that.data.img2.positionimg,
         title: that.data.img2.title,
@@ -1127,7 +1154,7 @@ Page({
     let id = e.currentTarget.dataset.id
     wx.navigateTo({
       // url: '../island/island',
-      url: '../gallery/gallery?id=' + id 
+      url: '../gallery/gallery?id=' + id
     })
   },
 
@@ -1195,26 +1222,26 @@ Page({
     //隐藏系统tabbar
     wx.hideTabBar();
     app.editTabbar();
-    
-    
+
+
     // 检测是否可以调用getUpdateManager检查更新
     if (!wx.canIUse("getUpdateManager")) return;
 
     let updateManager = wx.getUpdateManager();
     // 获取全局唯一的版本更新管理器，用于管理小程序更新
-    updateManager.onCheckForUpdate(function (res) {
+    updateManager.onCheckForUpdate(function(res) {
       // 监听向微信后台请求检查更新结果事件 
       console.log("是否有新版本：" + res.hasUpdate);
       if (res.hasUpdate) {
         //如果有新版本                
         // 小程序有新版本，会主动触发下载操作        
-        updateManager.onUpdateReady(function () {
+        updateManager.onUpdateReady(function() {
           //当新版本下载完成，会进行回调          
           wx.showModal({
             title: '更新提示',
             content: '新版本已经准备好，单击确定重启小程序',
             showCancel: false,
-            success: function (res) {
+            success: function(res) {
               if (res.confirm) {
                 // 新的版本已经下载好，调用 applyUpdate 应用新版本并重启小程序               
                 updateManager.applyUpdate();
@@ -1223,7 +1250,7 @@ Page({
           })
         })
         // 小程序有新版本，会主动触发下载操作（无需开发者触发）        
-        updateManager.onUpdateFailed(function () {
+        updateManager.onUpdateFailed(function() {
           //当新版本下载失败，会进行回调          
           wx.showModal({
             title: '提示',
@@ -1292,16 +1319,33 @@ Page({
 
       }
     })
-    // if(this.data.)
-  },
 
+  },
+  onShow: function() {
+    let that = this
+    app.globalData.likeid.forEach(val => {
+      if (val == that.data.like1) {
+        that.setData({
+          like1: 0
+        })
+      } else if (val == that.data.like2) {
+        that.setData({
+          like2: 0
+        })
+      } else if (val == that.data.like3) {
+        that.setData({
+          like3: 0
+        })
+      }
+    })
+  },
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
     return {
       path: "pages/launch/launch",
-      imageUrl: "http://onjuly-1257989321.cos.ap-guangzhou.myqcloud.com/route/img/339cfb21945a0702ce7e6c99195d65b11.jpg"
+      imageUrl: "http://onjuly-1257989321.cos.ap-guangzhou.myqcloud.com/route/img/6773022b7305a4abdd7b4ad7de008bb81.png"
     }
   }
 })

@@ -12,7 +12,7 @@
 
   <view wx:if='{{list}}' class='card_item_all'>
     <view class='card_item' wx:for="{{list}}" wx:key="item.routeid" bindlongpress="longTap" bindtap='bindroute' data-id='{{item.routeid}}' data-cid='{{item.collectid}}' data-uid='{{item.userid}}'>
-      <image class='card_item_img' src='{{item.positionimg}}'></image>
+      <image lazy-load='true' class='card_item_img' src='{{item.positionimg}}'></image>
       <view class='card_content'></view>
       <text class='card_text'>{{item.title}}</text>
     </view>
